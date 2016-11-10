@@ -15,5 +15,10 @@ public class Hipster
 		
 		return description;
 	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
 
 }

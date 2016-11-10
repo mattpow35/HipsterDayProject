@@ -18,7 +18,7 @@ public class HipsterPanel extends JPanel
 		this.baseLayout = new SpringLayout();
 		this.myButton = new JButton("click the button");
 		this.infoLabel = new JLabel("wow words");
-		this.dropDown = new JComboBox(baseController.getWords());
+		this.dropDown = new JComboBox(baseController.getHipsters());
 		
 		setupPanel();
 		setupLayout();
