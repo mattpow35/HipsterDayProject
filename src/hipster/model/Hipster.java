@@ -8,5 +8,12 @@ public class Hipster
 	{
 		this.name = name;
 	}
+	
+	public String toString()
+	{
+		String description = "This hipster's name is " + name;
+		
+		return description;
+	}
 
 }
