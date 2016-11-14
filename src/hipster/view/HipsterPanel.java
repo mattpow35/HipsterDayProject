@@ -3,6 +3,8 @@ package hipster.view;
 import javax.swing.*;
 import hipster.controller.HipsterController;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class HipsterPanel extends JPanel
 {
@@ -19,6 +21,9 @@ public class HipsterPanel extends JPanel
 		this.myButton = new JButton("click the button");
 		this.infoLabel = new JLabel("wow words");
 		this.dropDown = new JComboBox(baseController.getHipsters());
+		baseLayout.putConstraint(SpringLayout.WEST, dropDown, 107, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, dropDown, 95, SpringLayout.SOUTH, infoLabel);
+		baseLayout.putConstraint(SpringLayout.EAST, dropDown, 321, SpringLayout.WEST, this);
 		
 		setupPanel();
 		setupLayout();
@@ -42,13 +47,18 @@ public class HipsterPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.NORTH, infoLabel, 10, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, infoLabel, 163, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, dropDown, 42, SpringLayout.SOUTH, infoLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, dropDown, 177, SpringLayout.WEST, this);
 		
 	}
 	
 	private void setupListeners()
 	{
-		
+		dropDown.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent slection)
+			{
+				infoLabel.setText(dropDown.getSelectedItem().toString());
+			}
+		});
 	}
 
 }

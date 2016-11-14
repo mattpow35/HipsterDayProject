@@ -14,17 +14,19 @@ public class HipsterController
 	{
 		showHipsterLevelThree();
 		hipsters = new Hipster [5];
-		appFrame = new HipsterFrame(this);
-	}
-	
-	public void start()
-
-	{
+		
 		for (int index = 0; index < hipsters.length; index++)
 		{
 			hipsters[index] = new Hipster("Hipster #" + index);
 		}
 		
+		
+		appFrame = new HipsterFrame(this);
+	}
+	
+	public void start()
+	{
+	
 		hipsters[0].setName("matt");
 		
 		for (Hipster current : hipsters)
